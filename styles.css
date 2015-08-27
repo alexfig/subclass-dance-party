@@ -5,6 +5,8 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background-image: url("dancefloor.jpg");
+  background-size: cover;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -24,4 +26,38 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+  box-shadow: 0 0 0 1pt black;
+
+}
+.bouncy-dancer{
+  
+}
+.spinny-dancer{
+  border-radius:0px;
+}
+.flipping-dancer{
+  border: 5px solid;
+  border-radius:3px;
+}
+
+.bounce-once{
+  -webkit-animation : bounce 1.5s 1;
+}
+
+.flip-once{
+  -webkit-animation : flip 1.5s 1;
+}
+@-webkit-keyframes spin {
+    50% {-webkit-transform: rotate(180deg);}
+}
+@-webkit-keyframes hover {
+    100% {-webkit-transform: rotate(360deg);}
+}
+
+@-webkit-keyframes flip {
+    100%  {-webkit-transform: rotateX(360deg);}
+}
+
+@-webkit-keyframes bounce {
+    50% {-webkit-transform: translateY(-40px);}
 }

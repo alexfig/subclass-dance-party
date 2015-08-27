@@ -25,9 +25,20 @@ $(document).ready(function(){
     var dancer = dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
-      Math.random() * 1000
+      Math.floor(Math.random() * (800 - 200)) + 100
     );
+    dancers.push(dancer);
     $('body').append(dancer.$node);
   });
-});
 
+  $(".lineup").on("click", function(event){
+    var spacing = 30;
+    var left = 0;
+    var top = '50%';
+
+    for(var i =0; i < window.dancers.length; i++){
+      dancers[i].lineup(top, left + spacing);
+      left += spacing + dancers[i].$node.width();
+    }
+  });
+});
