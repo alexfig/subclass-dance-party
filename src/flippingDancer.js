@@ -7,6 +7,8 @@ var FlippingDancer = function(top, left, timeBetweenSteps){
   this.$node.append(this.$image);
   this.$node.addClass('flipping-dancer');
   var context = this;
+  this.top += 75;
+  this.left += 50;
   this.$node.on("mouseover", function(e){
   
   // -> removing the class
@@ -33,4 +35,14 @@ FlippingDancer.prototype = Object.create(Dancer.prototype);
 FlippingDancer.prototype.constructor = FlippingDancer;
 FlippingDancer.prototype.step = function(){
     
+};
+
+FlippingDancer.prototype.lineup = function(top,left){
+  this.top = top ;
+  this.left = left + 50;
+  var styleSettings = {
+    'top': top - 75,
+    'left': left
+  };
+  this.$node.animate(styleSettings);
 };

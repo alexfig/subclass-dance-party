@@ -12,10 +12,10 @@ var HoveringDancer = function(top, left, timeBetweenSteps){
       if(!(dancers[i] instanceof HoveringDancer))
         nearestNeighbor = dancers[i];
     }
-  
+  }
   this.origin = nearestNeighbor.left + 'px ' + nearestNeighbor.top + 'px'; 
-  this.left = nearestNeighbor.left - 30;
-  this.top = nearestNeighbor.top - 30;
+  this.left = nearestNeighbor.left;
+  this.top = nearestNeighbor.top;
 
 };
 
@@ -27,6 +27,6 @@ HoveringDancer.prototype.step = function(){
     var context = this;
     this.$node.show();
     this.$node.animate({'top' : this.top, 'left' : this.left}, 1000);
-    this.$node.css({'-webkit-transform-origin': '40px 40px'}); /* Chrome, Safari, Opera */
-    this.$node.css({'-webkit-animation' : 'hover ' + this.timeBetweenSteps/300 + 's linear infinite'});
+    //this.$node.css({'-webkit-transform-origin': '40px 40px'}); /* Chrome, Safari, Opera */
+    this.$node.css({'-webkit-animation' : 'rot ' + this.timeBetweenSteps/300 + 's linear infinite'});
 };

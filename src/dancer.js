@@ -45,4 +45,24 @@ Dancer.prototype.lineup = function(top,left){
     'left': left
   };
   this.$node.animate(styleSettings);
-}
+};
+
+Dancer.prototype.conga = function(delay, i){
+  var node = this.$node;
+  if(i === 0){
+    var top = $("body").height() * Math.random();
+    var left = $("body").width() * Math.random();
+  }else{
+    var top = dancers[i-1].top;
+    var left = dancers[i-1].left;
+  }
+  this.top = top;
+  this.left = left;
+  var that = this;
+
+  setTimeout(function(){
+    node.animate({'top' : top, 'left' : left}, {'duration': 3000, 'complete' : function(){
+          that.conga(0, i); }
+    });
+  }, delay);
+};

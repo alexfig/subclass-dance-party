@@ -54,6 +54,20 @@ body, a:link, a:visited, a:active{
     100% {-webkit-transform: rotate(360deg);}
 }
 
+@keyframes rot {
+  from {
+    transform: rotate(0deg)
+               translate(-40px)
+               rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg)
+               translate(-40px) 
+               rotate(-360deg);
+  }
+}
+
+
 @-webkit-keyframes flip {
     100%  {-webkit-transform: rotateX(360deg);}
 }

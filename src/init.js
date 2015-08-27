@@ -34,11 +34,17 @@ $(document).ready(function(){
   $(".lineup").on("click", function(event){
     var spacing = 30;
     var left = 0;
-    var top = '50%';
+    var top = 250;
 
     for(var i =0; i < window.dancers.length; i++){
       dancers[i].lineup(top, left + spacing);
       left += spacing + dancers[i].$node.width();
+    }
+  });
+
+  $(".conga").on("click", function(event){
+    for(var i =0; i < window.dancers.length; i++){
+      dancers[i].conga(i * 500, i);
     }
   });
 });
